@@ -1,0 +1,30 @@
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+    	//Practice initializing different variable types and using Console.WriteLine
+        float myNum = 50.2F;
+        string myName = "AJ";
+        double d1 = 17.93D;
+        bool myBool = true;
+        Console.WriteLine(myName);
+        Console.WriteLine(myNum);
+        Console.WriteLine(d1);
+        Console.WriteLine(myBool);
+        
+        
+        //Exercise initializing multiple variables & Using mulitplication/division operators
+        int x = 5, y = 6, z = 50;
+        Console.WriteLine(x * y / z);
+        
+        //Exercise increment and addition assignment operator
+        x++;
+        x += 3;
+        Console.WriteLine(x);
+     }
+  }
+}
