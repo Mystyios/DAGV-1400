@@ -29,6 +29,25 @@ public class Program
         {
             Console.WriteLine("You Got an F, you should ask for some help");
         }
+
+        Console.WriteLine("What is your favorite subject: ");
+        string favSubject = Console.ReadLine();
+        switch(favSubject)
+        {
+            case "Math" or "math":
+            Console.WriteLine("You should keep practicing and exploring new mathematical concepts");
+            break;
+            case "Science":
+            Console.WriteLine("Keep exploring the whys and hows of the world, and keep experimenting");
+            break;
+            case "English":
+            Console.WriteLine("Keep expanding your literary skills by reading new books that challenge you");
+            break;
+            case "History":
+            Console.WriteLine("Keep studying the past to make a better future");
+            break;
+        }
+
         //:D(Happy)
     }
 }
