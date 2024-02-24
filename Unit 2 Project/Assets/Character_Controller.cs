@@ -7,6 +7,7 @@ public class Character_Controller : MonoBehaviour
    public float speed = 10f;
    public Rigidbody rb;
    public bool isGrounded = true;
+   public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,19 @@ public class Character_Controller : MonoBehaviour
             rb.AddForce(new Vector3(0, 5, 0), ForceMode.Impulse);
             isGrounded = false;
         }
+
+        if(Input.GetButtonDown("Fire3"))
+        {
+            speed = 20f;
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            player.transform.localScale = new Vector3 (1, 0.5f, 1);
+        }
+
+        player.transform.localScale = new Vector3 (1, 1, 1);
+        speed = 10f;
 
     }
 
