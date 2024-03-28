@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
     private float speed = 2;
     private float xBound = 10;
+    public bool gameOver;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +24,8 @@ public class PlayerController : MonoBehaviour
     void MovePlayer()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-
-        playerRb.AddForce(Vector3.forward * speed * verticalInput);
         playerRb.AddForce(Vector3.right * speed * horizontalInput);
 
-           
     }
 
     void ConstrainPlayerPosition()
@@ -41,6 +38,15 @@ public class PlayerController : MonoBehaviour
         if (transform.position.x > xBound)
         {
             transform.position = new Vector3(xBound, transform.position.y, transform.position.z);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.Log("Game Over");
+            gameOver = true;
         }
     }
 }
